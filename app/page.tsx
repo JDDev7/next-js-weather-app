@@ -6,6 +6,7 @@ import { sulphurPoint } from "@/lib/utils";
 
 export default function Home() {
   const [weather, setWeather] = useState(null);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [weatherDescription, setWeatherDescription] = useState("");
   const [backgroundClass, setBackgroundClass] = useState("");
   const [containerClass, setContainerClass] = useState("");

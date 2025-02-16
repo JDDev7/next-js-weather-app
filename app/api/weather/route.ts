@@ -26,6 +26,7 @@ export async function GET(request: Request) {
 
         const response = await axios.get(url, {params});
         return NextResponse.json(response.data);
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {
         return NextResponse.json({error: "Error al obtener el clima"}, {status: 500});
     }
