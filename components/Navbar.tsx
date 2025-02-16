@@ -30,7 +30,7 @@ const Navbar = () => {
         <div className={`${styles.navbarLinks} ${isOpen ? `${styles.open}` : ''}`}>
             <Link href="/">Inicio</Link>
             <Link href="/about">Sobre nosotros</Link>
-            <Link href="https://github.com">Github</Link>
+            <Link href="https://github.com/JDDev7/next-js-weather-app">Github</Link>
         </div>
     </nav>
   )
