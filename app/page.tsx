@@ -4,8 +4,27 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { sulphurPoint } from "@/lib/utils";
 
+// Define interfaces para tipar los datos
+interface WeatherCondition {
+  id: number;
+  main: string;
+  description: string;
+  icon: string;
+}
+
+interface MainData {
+  temp: number;
+  humidity: number;
+}
+
+interface WeatherResponse {
+  weather: WeatherCondition[];
+  main: MainData;
+  name: string;
+}
+
 export default function Home() {
-  const [weather, setWeather] = useState(null);
+  const [weather, setWeather] = useState<WeatherResponse | null>(null);
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [weatherDescription, setWeatherDescription] = useState("");
   const [backgroundClass, setBackgroundClass] = useState("");
@@ -14,8 +33,8 @@ export default function Home() {
 
   function toTitleCase(str: string): string {
     return str
-      .toLowerCase() // Convertir todo a minúsculas
-      .replace(/(?:^|\s)\S/g, (match) => match.toUpperCase()); // Convertir la primera letra de cada palabra a mayúsculas
+      .toLowerCase()
+      .replace(/(?:^|\s)\S/g, (match) => match.toUpperCase());
   }
 
   const handleSelectCity = async (city: string) => {
@@ -27,9 +46,8 @@ export default function Home() {
       setWeatherIcon("");
       return;
     }
-
     const response = await fetch(`/api/weather?city=${city}`);
-    const data = await response.json();
+    const data: WeatherResponse = await response.json();
     setWeather(data);
   };
 
@@ -54,8 +72,7 @@ export default function Home() {
           setContainerClass("cont-soleado");
           setWeatherIcon("/sun.webp");
           break;
-        case description.includes("NUBES"):
-        case description.includes("NUBOSO"):
+        case description.includes("NUBES") || description.includes("NUBOSO"):
           setBackgroundClass("nubes");
           setContainerClass("cont-nubes");
           setWeatherIcon("/clouds.webp");
@@ -91,7 +108,6 @@ export default function Home() {
     <section className={`main-container ${containerClass}`}>
       <div className={`main-section`}>
         <CitySelector onSelectCity={handleSelectCity} />
-
         {weather ? (
           <div className={`weather-container ${backgroundClass}`}>
             <Image
@@ -116,13 +132,18 @@ export default function Home() {
           </div>
         ) : (
           <div className={`weather-container ${backgroundClass}`}>
-
-            <h2 className={`weather-name ${sulphurPoint.className}`}>Elige una ciudad en el desplegable</h2>
+            <h2 className={`weather-name ${sulphurPoint.className}`}>
+              Elige una ciudad en el desplegable
+            </h2>
             <p className={`weather-text ${sulphurPoint.className}`}>
-              Aqui verás la descripción del tiempo actual
+              Aquí verás la descripción del tiempo actual
             </p>
-            <p className={`weather-text ${sulphurPoint.className}`}>Aquí verás la temperatura</p>
-            <p className={`weather-text ${sulphurPoint.className}`}>Aquí verás el % de humedad</p>
+            <p className={`weather-text ${sulphurPoint.className}`}>
+              Aquí verás la temperatura
+            </p>
+            <p className={`weather-text ${sulphurPoint.className}`}>
+              Aquí verás el % de humedad
+            </p>
           </div>
         )}
       </div>
