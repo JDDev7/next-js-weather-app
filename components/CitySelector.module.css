@@ -1,0 +1,3 @@
+.citySelector {
+    @apply w-[250px] bg-gray-800 my-4 text-white rounded-lg p-2 font-bold ;
+}

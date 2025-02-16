@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#root {
+  @apply h-full
+}
+
+* {
+  @apply box-border m-0 p-0
+}
+
+html, body {
+  @apply h-full m-0 p-0
+}
+
+
+
+.main-container {
+  @apply bg-gray-600 h-[calc(100vh-2rem)] py-10
+}
+
+.main-section {
+  @apply flex flex-col gap-1 w-full h-full justify-center items-center text-white py-10
+}
+
+.weather-container {
+  @apply flex flex-col w-3/4 h-full border-2 border-gray-800 rounded-lg items-center justify-center 2xl:w-1/4;
+}
+
+.weather-name {
+  @apply text-xl font-bold text-center drop-shadow-[0px_1px_2px_#000000]
+}
+
+.weather-icon {
+  @apply flex w-[8rem] h-[8rem] drop-shadow-[0px_1px_2px_#000000] self-center max-xl:w-[4rem] max-xl:h-[4rem];
+}
+
+.weather-text {
+  @apply text-center text-2xl drop-shadow-[0px_1px_2px_#000000]
+}
+
+.weather-temp {
+  @apply text-center text-[6rem] drop-shadow-[0px_1px_2px_#000000] max-xl:text-[3rem]
+}
+
+.weather-humidity {
+  @apply text-center text-[4rem] drop-shadow-[0px_1px_2px_#000000]
+}
+
+.nubes {
+  @apply bg-[url("/cloudy-window.webp")] bg-cover bg-center h-[600px];
+}
+
+.claro {
+  @apply bg-[url("/clear-window.webp")] bg-cover bg-center h-[600px];
+}
+
+.lluvia {
+  @apply bg-[url("/raining-window.webp")] bg-cover bg-center h-[600px];
+}
+
+.niebla {
+  @apply bg-[url("/foggy-window.webp")] bg-cover bg-center h-[600px];
+}
+
+.soleado {
+  @apply bg-[url("/sunny-window.webp")] bg-cover bg-center h-[600px];
+}
+
+.llovizna {
+  @apply bg-[url("/drizzle-window.webp")] bg-cover bg-center h-[600px];
+}
+
+.tormenta {
+  @apply bg-[url("/thunderstorm-window.webp")] bg-cover bg-center h-[600px];
+}
+
+.nieve {
+  @apply bg-[url("/snowy-window.webp")] bg-cover bg-center h-[600px];
+}
+
+.cont-nubes {
+  @apply bg-[url("/cloudy.webp")] bg-cover bg-center;
+}
+
+.cont-claro {
+  @apply bg-[url("/clear.webp")] bg-cover bg-center;
+}
+
+.cont-lluvia {
+  @apply bg-[url("/raining.webp")] bg-cover bg-center;
+}
+
+.cont-niebla {
+  @apply bg-[url("/foggy.webp")] bg-cover bg-center;
+}
+
+.cont-soleado {
+  @apply bg-[url("/sunny.webp")] bg-cover bg-center;
+}
+
+.cont-llovizna {
+  @apply bg-[url("/drizzle.webp")] bg-cover bg-center;
+}
+
+.cont-tormenta {
+  @apply bg-[url("/thunderstorm.webp")] bg-cover bg-center;
+}
+
+.cont-nieve {
+  @apply bg-[url("/snowy.webp")] bg-cover bg-center;
+}
+
+
+
+.bg {
+  @apply bg-gray-600
+}

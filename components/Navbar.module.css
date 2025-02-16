@@ -1,0 +1,25 @@
+.navbar {
+  @apply flex flex-row fixed w-full justify-between items-center bg-gray-800 p-2 text-white gap-2;
+}
+
+.navbarLogoContainer h1 {
+  @apply text-xl font-bold;
+}
+
+.navbarMenuButton {
+  @apply xl:hidden
+}
+
+
+
+.navbarLogoContainer p {
+  @apply text-sm;
+}
+
+.navbarLinks {
+  @apply max-xl:hidden xl:flex xl:flex-row xl:gap-4 xl:px-5;
+}
+
+.navbarLinks.open {
+  @apply flex flex-col absolute top-16 right-0 w-[200px] bg-gray-800 p-4 rounded-lg shadow-lg
+}
