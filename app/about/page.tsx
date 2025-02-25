@@ -29,7 +29,7 @@ const About = () => {
             la ciudad de España en la que vives, con un diseño moderno y
             agradable. Si quieres trabajar con JDDev, puedes visitar su portafolio haciendo click 
           </p>
-          <Link href="https://github.com/jddev7" className="font-bold text-gray-800 text-2xl">Aquí</Link>
+          <Link href="https://github.com/jddev7" className="font-bold text-gray-800 text-2xl" rel="noreferrer noopener" target="_blank">Aquí</Link>
         </div>
         </div>
       </div>
